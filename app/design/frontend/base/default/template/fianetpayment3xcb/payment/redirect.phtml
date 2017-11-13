@@ -1,0 +1,73 @@
+<?php
+
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please contact us
+ * via http://www.fia-net-group.com/formulaire.php so we can send you a copy immediately.
+ *
+ * @author     FIA-NET <support-boutique@fia-net.com>
+ * @copyright  Copyright (c) 2017 FIA-NET
+ * @version    Release: $Revision: 0.1.0 $
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+body {
+    font-size: 12px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+}
+.message {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.main {
+    text-align: center;
+    padding-top: 100px;
+}
+</style>
+</head>
+<body>
+<div class="main">
+    <?php if ($this->getHasError()): ?>
+        <p><?php echo $this->escapeHtml($this->__('There has been an error processing your payment. Please try later or contact us for help.')); ?></p>
+        <p><a href="<?php echo $this->getUrl('checkout/onepage'); ?>"><?php echo $this->escapeHtml($this->__('Back')); ?></a></p>
+    <?php else: ?>
+        <p class="message"><?php echo $this->escapeHtml($this->__('You will be redirected to 3xCB in a few seconds...')); ?></p>
+        <form name="fianetpayment3xcb_form" id="fianetpayment3xcb_form"
+            action="<?php echo $this->escapeHtml($this->getFormUrl()); ?>" method="post">
+            <?php if ($urlCall = $this->getUrlCall()): ?>
+                <input type="hidden" name="URLCall" value="<?php echo $this->escapeHtml($urlCall); ?>">
+            <?php endif; ?>
+            <?php if ($urlSys = $this->getUrlSys()): ?>
+                <input type="hidden" name="URLSys" value="<?php echo $this->escapeHtml($urlSys); ?>">
+            <?php endif; ?>
+            <?php if ($xmlParam = $this->getXmlParam()): ?>
+                <input type="hidden" name="XMLParam" value="<?php echo $this->escapeHtml($xmlParam); ?>">
+            <?php endif; ?>
+            <input type="hidden" name="XMLInfo" value="<?php echo $this->escapeHtml($this->getXmlInfo()); ?>">
+            <input type="hidden" name="CheckSum" value="<?php echo $this->escapeHtml($this->getChecksum()); ?>">
+            <?php if (!$this->getAutoSend()): ?>
+                <input type="submit" value="<?php echo $this->escapeHtml($this->__('Go to online payment platform')); ?>"/>
+            <?php endif; ?>
+        </form>
+        <?php if ($this->getAutoSend()): ?>
+            <script>document.fianetpayment3xcb_form.submit();</script>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>
+</body>

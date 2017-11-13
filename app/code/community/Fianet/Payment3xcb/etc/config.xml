@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please contact us
+ * via http://www.fia-net-group.com/formulaire.php so we can send you a copy immediately.
+ *
+ * @author     FIA-NET <support-boutique@fia-net.com>
+ * @copyright  Copyright (c) 2017 FIA-NET
+ * @version    Release: $Revision: 0.1.0 $
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Fianet_Payment3xcb>
+            <version>0.1.1</version>
+        </Fianet_Payment3xcb>
+    </modules>
+    <admin>
+        <routers>
+            <fianetpayment3xcb>
+                <use>admin</use>
+                <args>
+                    <module>Fianet_Payment3xcb</module>
+                    <frontName>fianetpayment3xcb</frontName>
+                </args>
+            </fianetpayment3xcb>
+        </routers>
+    </admin>
+    <frontend>
+        <layout>
+            <updates>
+                <fianetpayment3xcb>
+                    <file>fianetpayment3xcb.xml</file>
+                </fianetpayment3xcb>
+            </updates>
+        </layout>
+        <routeurs>
+            <fianetpayment3xcb>
+                <use>standard</use>
+                <args>
+                    <module>Fianet_Payment3xcb</module>
+                    <frontName>fianetpayment3xcb</frontName>
+                </args>
+            </fianetpayment3xcb>
+        </routeurs>
+        <translate>
+            <modules>
+                <Fianet_Payment3xcb>
+                    <files>
+                        <default>Fianet_Payment3xcb.csv</default>
+                    </files>
+                </Fianet_Payment3xcb>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <Fianet_Payment3xcb_Model_Observer_1>
+                        <type>singleton</type>
+                        <class>Fianet_Payment3xcb_Model_Observer</class>
+                        <method>updateSalesOrderGrid</method>
+                    </Fianet_Payment3xcb_Model_Observer_1>
+                </observers>
+            </adminhtml_block_html_before>
+            <controller_action_layout_render_before_adminhtml_sales_order_view>
+                <observers>
+                    <Fianet_Payment3xcb_Model_Observer_1>
+                        <class>Fianet_Payment3xcb_Model_Observer</class>
+                        <method>addSalesOrderViewButtons</method>
+                    </Fianet_Payment3xcb_Model_Observer_1>
+                </observers>
+            </controller_action_layout_render_before_adminhtml_sales_order_view>
+        </events>
+        <helpers>
+            <data>Fianet_Payment3xcb_Helper_Data</data>
+        </helpers>
+        <translate>
+            <modules>
+                <Fianet_Payment3xcb>
+                    <files>
+                        <default>Fianet_Payment3xcb.csv</default>
+                    </files>
+                </Fianet_Payment3xcb>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <fianetpayment3xcb>
+                    <file>fianetpayment3xcb.xml</file>
+                </fianetpayment3xcb>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <fianetpayment3xcb>
+                <class>Fianet_Payment3xcb_Model</class>
+                <resourceModel>fianetpayment3xcb_resource</resourceModel>
+            </fianetpayment3xcb>
+            <fianetpayment3xcb_resource>
+                <class>Fianet_Payment3xcb_Model_Resource</class>
+                <entities>
+                    <mapping_catalog_category>
+                        <table>fianetpayment3xcb_mapping_catalog_category</table>
+                    </mapping_catalog_category>
+                    <mapping_shipping_method>
+                        <table>fianetpayment3xcb_mapping_shipping_method</table>
+                    </mapping_shipping_method>
+                    <mapping_transaction_state>
+                        <table>fianetpayment3xcb_mapping_transaction_state</table>
+                    </mapping_transaction_state>
+                    <store_information>
+                        <table>fianetpayment3xcb_store_information</table>
+                    </store_information>
+                    <log>
+                        <table>fianetpayment3xcb_log</table>
+                    </log>
+                    <transaction_history>
+                        <table>fianetpayment3xcb_transaction_history</table>
+                    </transaction_history>
+                </entities>
+            </fianetpayment3xcb_resource>
+        </models>
+        <resources>
+            <fianetpayment3xcb_setup>
+                <setup>
+                    <module>Fianet_Payment3xcb</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </fianetpayment3xcb_setup>
+            <fianetpayment3xcb_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </fianetpayment3xcb_write>
+            <fianetpayment3xcb_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </fianetpayment3xcb_read>
+        </resources>
+        <blocks>
+            <fianetpayment3xcb>
+                <class>Fianet_Payment3xcb_Block</class>
+            </fianetpayment3xcb>
+        </blocks>
+        <helpers>
+            <fianetpayment3xcb>
+                <class>Fianet_Payment3xcb_Helper</class>
+            </fianetpayment3xcb>
+        </helpers>
+        <sales>
+            <order>
+                <statuses>
+                    <pending_fianet3xcb translate="label" module="fianetpayment3xcb">
+                        <label>Pending 3xCB</label>
+                    </pending_fianet3xcb>
+                </statuses>
+                <states>
+                    <pending_payment>
+                        <statuses>
+                            <pending_fianet3xcb/>
+                        </statuses>
+                        <visible_on_front/>
+                    </pending_payment>
+                </states>
+            </order>
+        </sales>
+    </global>
+    <default>
+        <payment>
+            <fianet3xcb>
+                <model>fianetpayment3xcb/payment_method_fianet3xcb</model>
+                <active>0</active>
+                <title><![CDATA[Paiement en 2, 3 ou 4 fois par carte bancaire]]></title>
+                <test>1</test>
+                <debug>0</debug>
+                <order_status>pending</order_status>
+                <automatic_invoicing>0</automatic_invoicing>
+                <allowspecific>1</allowspecific>
+                <specificcountry>FR,GF,GP,MQ,RE,YT</specificcountry>
+                <sort_order>1</sort_order>
+            </fianet3xcb>
+        </payment>
+        <fianetpayment3xcb>
+            <production>
+                <url_webapp_ws>https://www.3foiscb-sofinco.fr/ws/v1/</url_webapp_ws>
+                <url_webapp_payment>https://www.3foiscb-sofinco.fr/front/</url_webapp_payment>
+            </production>
+            <test>
+                <url_webapp_ws>https://rct.3foiscb-sofinco.fr/ws/v1/</url_webapp_ws>
+                <url_webapp_payment>https://rct.3foiscb-sofinco.fr/front/</url_webapp_payment>
+            </test>
+            <config>
+                <allow_downloadable_products>1</allow_downloadable_products>
+                <defaultshippingtimes>5</defaultshippingtimes>
+            </config>
+        </fianetpayment3xcb>
+    </default>
+    <crontab>
+        <jobs>
+            <fianetpayment3xcb_update_transactions_state>
+                <schedule>
+                    <cron_expr>0 */3 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>fianetpayment3xcb/cron_job::transactionsUpdate</model>
+                </run>
+            </fianetpayment3xcb_update_transactions_state>
+        </jobs>
+    </crontab>
+</config>

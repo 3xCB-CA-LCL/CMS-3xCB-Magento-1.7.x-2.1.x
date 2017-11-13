@@ -1,0 +1,92 @@
+<?php
+
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please contact us
+ * via http://www.fia-net-group.com/formulaire.php so we can send you a copy immediately.
+ *
+ * @author     FIA-NET <support-boutique@fia-net.com>
+ * @copyright  Copyright (c) 2017 FIA-NET
+ * @version    Release: $Revision: 0.1.0 $
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+?>
+<?php
+
+$options = $this->getTransactionStateOptionArray();
+$orderStatusArray = $this->getOrderStatuses();
+
+?>
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?php echo Mage::helper('fianetpayment3xcb')->__('FIA-NET Transaction State to Order Status Mapping'); ?></h3></td>
+            <td class="a-right">
+                <button onclick="editForm.submit()" class="scalable save" type="button"><span><?php echo $this->__('Save'); ?></span></button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+    <form id="edit_form" name="edit_form" method="post" action="<?php echo $this->getUrl('*/*/save'); ?>">
+        <?php echo $this->getBlockHtml('formkey') ?>
+
+        <div class="grid">
+            <table cellspacing="0" class="data">
+                <thead>
+                    <tr class="headings">
+                        <th><?php echo Mage::helper('fianetpayment3xcb')->__('3xCB Transaction State'); ?></th>
+                        <th><?php echo Mage::helper('fianetpayment3xcb')->__('State Description'); ?></th>
+                        <th><?php echo Mage::helper('fianetpayment3xcb')->__('Order Status'); ?></th>
+                        <th class="a-center"><?php echo Mage::helper('fianetpayment3xcb')->__('Notify Customer'); ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($options as $i => $option): ?>
+                        <?php
+                        /** @var Fianet_Payment3xcb_Model_Mapping_Transaction_State $mapping */
+                        $mapping = $this->getMapping($option['value']);
+                        ?>
+                        <tr class="<?php echo $i % 2 == 0 ? 'even' : ''; ?>">
+                            <td><?php echo $this->escapeHtml($option['value']); ?></td>
+                            <td><?php echo $this->escapeHtml($option['label']); ?></td>
+                            <td>
+                                <select id="mapping_<?php echo $this->escapeHtml($option['value']); ?>_order_status"
+                                        name="mapping[<?php echo $this->escapeHtml($option['value']); ?>][order_status]"
+                                        title="<?php echo Mage::helper('fianetpayment3xcb')->__('Order Status'); ?>">
+                                    <?php foreach ($orderStatusArray as $status => $label): ?>
+                                        <?php  ?>
+                                        <option value="<?php echo $this->escapeHtml($status); ?>"
+                                            <?php if ($mapping->getOrderStatus() == $status): ?> selected<?php endif; ?>>
+                                            <?php echo $this->escapeHtml($label); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                            <td class="a-center">
+                                <input type="checkbox"
+                                       title="<?php echo Mage::helper('fianetpayment3xcb')->__('Notify Customer'); ?>"
+                                       name="mapping[<?php echo $this->escapeHtml($option['value']); ?>][notify]"
+                                       value="1"<?php if ($mapping->getNotifyCustomer()): ?> checked<?php endif; ?>>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <p class="a-center" style="margin-top:30px">
+            <img src="<?php echo $this->getSkinUrl('images/fianetpayment3xcb/3xcb_transaction_state_diagram.png'); ?>"/>
+        </p>
+    </form>
+</div>
+<script type="text/javascript">
+    var editForm = new varienForm('edit_form');
+</script>

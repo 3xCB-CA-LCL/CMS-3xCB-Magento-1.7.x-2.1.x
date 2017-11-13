@@ -1,0 +1,248 @@
+"-- Please Select --","-- Faites un choix --",-
+"All Allowed Countries","Tous les pays autorisés",-
+No,Non,-
+Pending,"En attente",-
+"Specific Countries","Certains pays",-
+Yes,Oui,-
+
+"Are you sure?","Êtes-vous certain ?",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+CSV,CSV,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+"Created At","Créé le",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+Delete,Effacer,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+Event,Événement,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+Message,Message,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+Severity,Sévérité,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+XML,XML,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Log/Grid.php
+
+"""%"" Catalog Category to FIA-NET Category Mapping","Association de la catégorie de produits « %s » avec une catégorie FIA-NET",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Mapping/Catalog/Category/Edit.php
+"Catalog Category to FIA-NET Category Mapping","Association des catégories de produits avec les catégories FIA-NET",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Mapping/Catalog/Category/Edit.php
+
+"Apply to sub-categories","Appliquer aux sous-catégories",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Mapping/Catalog/Category/Edit/Form.php
+"FIA-NET Category","Catégorie FIA-NET",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Mapping/Catalog/Category/Edit/Form.php
+"Map Catalog Category","Associer la catégorie de produits",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Mapping/Catalog/Category/Edit/Form.php
+
+Amount,Montant,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+"FIA-NET 3xCB Transaction","Transaction FIA-NET 3xCB",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+"Last Refresh","Dernière actualisation",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+Mode,Mode,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+Source,Source,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+State,État,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+"Transaction #","N° de transaction",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Sales/Order/View/Tab/TransactionHistory.php
+
+"Order #","N° de commande",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Edit/Form.php
+
+Cancel,Annuler,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Grid.php
+"G.T. (Purchased)","Montant total<br/>(Devise de la commande)",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Grid.php
+"Last State","Dernier état",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Grid.php
+"Partially Validate","Valider partiellement",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Grid.php
+"Purchased On","Date d'achat",app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Grid.php
+Validate,Valider,app/code/community/Fianet/Payment3xcb/Block/Adminhtml/Transaction/Control/Grid.php
+
+"Order #%s. Error with SoColissimo's return. Product Code %s was not recognized","Commande n°%s. Erreur de retour SoColissimo. Le Code Product %s n'a pas été reconnu",app/code/community/Fianet/Payment3xcb/Helper/Shipping/Socolissimo.php
+
+"Manual Update","Mise à jour manuelle",app/code/community/Fianet/Payment3xcb/Helper/Transaction.php
+"Order #%s: %s","Commande n°%s : %s",app/code/community/Fianet/Payment3xcb/Helper/Transaction.php
+"Planified Update","Mise à jour planifiée",app/code/community/Fianet/Payment3xcb/Helper/Transaction.php
+
+"%s order(s) have been processed.","%s commandes ont été traitées",app/code/community/Fianet/Payment3xcb/Helper/Transaction.php
+"Order #%s - Invalid payment method: %s","Commande n°%s - Méthode de paiement invalide : %s",app/code/community/Fianet/Payment3xcb/Helper/Transaction.php
+"Order #%s - Transaction Not Found","Commande n°%s - Transaction non trouvée",app/code/community/Fianet/Payment3xcb/Helper/Transaction.php
+
+"All Customers","Tous les clients",app/code/community/Fianet/Payment3xcb/Model/Adminhtml/System/Config/Source/AvailableFor.php
+"Specific Customer Groups","Groupes clients spécifiés",app/code/community/Fianet/Payment3xcb/Model/Adminhtml/System/Config/Source/AvailableFor.php
+
+"API: request: %s\n API: response: %s","API: requête: %s\n API: réponse: %s",app/code/community/Fianet/Payment3xcb/Model/Fianet/Api.php
+"Order #%s - Unable to retrieve 3xCB transaction: %s","Commande n°%s - Impossible de récupérer la transaction 3xCB : %s",app/code/community/Fianet/Payment3xcb/Model/Fianet/Api.php
+"Unable to retrieve 3xCB availability: %s","Impossible de récupérer l'éligibilité 3xCB : %s",app/code/community/Fianet/Payment3xcb/Model/Fianet/Api.php
+
+"Fianet Client Request %s switching to SSL because TLS can not be reached.","La requête du Client Fianet %s passe en SSL car TLS ne peut être utilisé.",app/code/community/Fianet/Payment3xcb/Model/Fianet/Client.php
+
+"`cpostal` is undefined","`cpostal` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Adresse.php
+"`pays` is undefined","`pays` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Adresse.php
+"`rue1` is undefined","`rue1` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Adresse.php
+"`ville` is undefined","`ville` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Adresse.php
+
+"`devise` is undefined","`devise` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande.php
+"`merchantreference` is undefined","`merchantreference` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande.php
+"`montant` is undefined","`montant` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande.php
+"`refid` is undefined","`refid` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande.php
+
+"Product `ref` is undefined","La `ref` du produit n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/List/Product.php
+"Product `type` is undefined","Le `type` du produit n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/List/Product.php
+"Product name is undefined","Le nom du produit n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/List/Product.php
+
+"Downloadable product and/or virtual product","Produit téléchargeable et/ou produit virtuel",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/Transport.php
+"`nom` is undefined","`nom` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/Transport.php
+"`rapidite` is undefined","`rapidite` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/Transport.php
+"`type` is undefined","`type` n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Fianet/Xml/Control/Infocommande/Transport.php
+
+"3xCB: Cancel","3xCB : annuler",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+"3xCB: Partially Validate","3xCB : valider partiellement",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+"3xCB: Validate","3xCB : valider",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+"Are you sure you want to cancel the 3xCB transaction?","Êtes-vous sûr(e) de vouloir annuler la transaction 3xCB ?",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+"Are you sure you want to partially validate the 3xCB transaction?","Êtes-vous sûr(e) de vouloir valider partiellement la transaction 3xCB ?",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+"Are you sure you want to validate the 3xCB transaction?","Êtes-vous sûr(e) de vouloir valider la transaction 3xCB ?",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+"FIA-NET 3xCB: Get Transactions' State","FIA-NET 3xCB : Récupérer l'état des transactions",app/code/community/Fianet/Payment3xcb/Model/Observer.php
+
+"3xCB availability: %s","Éligibilité 3xCB : %s",app/code/community/Fianet/Payment3xcb/Model/Payment/Method/Fianet3xcb.php
+"Unknown 3xCB availability code: `%s`","Code d'éligibilité 3xCB inconnu : `%s`",app/code/community/Fianet/Payment3xcb/Model/Payment/Method/Fianet3xcb.php
+
+Production,Production,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/Mode.php
+Test,Test,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/Mode.php
+
+"Alimentation & gastronomie","Alimentation & gastronomie",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Articles et accessoires pour bébé","Articles et accessoires pour bébé",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Auto & moto","Auto & moto",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Bijoux et métaux précieux","Bijoux et métaux précieux",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Culture & divertissements","Culture & divertissements",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+Electroménager,Electroménager,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Enchères et achats groupés","Enchères et achats groupés",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Fleurs & cadeaux","Fleurs & cadeaux",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Hifi, photo & vidéos","Hifi, photo & vidéos",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Informatique & logiciels","Informatique & logiciels",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Maison & jardin","Maison & jardin",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Santé & beauté","Santé & beauté",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Services aux particuliers","Services aux particuliers",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Services aux professionnels","Services aux professionnels",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Sonorisation & lumière","Sonorisation & lumière",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+Sport,Sport,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Téléphonie & communication","Téléphonie & communication",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Voyage & tourisme","Voyage & tourisme",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+"Vêtements & accessoires","Vêtements & accessoires",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ProductType.php
+
+"Express (less than 24h)","Express (moins de 24h)",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingSpeed.php
+Standard,Standard,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingSpeed.php
+
+"Emission d'un billet électronique, téléchargements","Emission d'un billet électronique, téléchargements",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingType.php
+"Retrait dans un aéroport, une gare ou une agence de voyage","Retrait dans un aéroport, une gare ou une agence de voyage",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingType.php
+"Retrait de la marchandise chez le marchand","Retrait de la marchandise chez le marchand",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingType.php
+Transporteur,Transporteur,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingType.php
+"Utilisation d'un réseau de points-retrait tiers","Utilisation d'un réseau de points-retrait tiers",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/ShippingType.php
+
+Aborted,Abandonnée,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Cancellation Asked","Annulation demandée",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+Cancelled,Annulée,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Contract Accepted","Dossier accepté",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Contract Refused","Dossier refusé",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Contract Review In Progress","Dossier à l'étude",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Contract Sent","Contrat envoyé",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Debit Sent","Débit envoyé",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"In Progress","En cours",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Partial Validation Asked","Validation partielle demandée",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+Refused,Refusée,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+Stored,Enregistré,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+Validated,Validée,app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+"Validation Asked","Validation demandée",app/code/community/Fianet/Payment3xcb/Model/Source/Fianet/TransactionState.php
+
+"Order ID is undefined","N° de commande n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Transaction/History.php
+"Transaction amount is undefined","Le montant de la transaction n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Transaction/History.php
+"Transaction mode is undefined","Le mode de la transaction n'est pas défini",app/code/community/Fianet/Payment3xcb/Model/Transaction/History.php
+
+Log,Journal,app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/LogController.php
+"Please select record(s).","Sélectionnez au moins un enregistrement.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/LogController.php
+"Records Manager","Gestion des enregistrements",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/LogController.php
+"Total of %d record(s) have been deleted.","%d enregistrement(s) a (ont) été effacé(s).",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/LogController.php
+
+"Data successfully deleted.","Données correctement suprimées",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Mapping/Catalog/CategoryController.php
+"Product type","Type de produits",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Mapping/Catalog/CategoryController.php
+
+"Data successfully saved but the name of some shipping methods must be defined.","Données correctement sauvegardées mais le nom de certaines méthodes de livraison restent à définir.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Mapping/Shipping/MethodController.php
+
+"Data successfully saved.","Données correctement sauvegardées.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Mapping/Transaction/StateController.php
+"Invalid form data.","Données du formulaire invalides.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Mapping/Transaction/StateController.php
+
+"This order no longer exists.","Cette commande n'existe plus.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Sales/OrderController.php
+
+"API: error","API: erreur",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"API: internal error","API: erreur interne",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"API: invalid action","API: action invalide",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"API: invalid request","API: requête invalide",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"API: invalid response","API: réponse invalide",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"API: transaction not found","API: transaction non trouvée",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"API: unauthorized merchant or bad checksum","API: e-commerçant non autorisé ou erreur de checksum",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order #%s - Merchant cancel the transaction.","Commande n°%s - L'e-commerçant annule la transaction.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order #%s - Merchant partially validate the transaction.","Commande n°%s - L'e-commerçant valide partiellement la transaction.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order #%s - Merchant validate the transaction.","Commande n°%s - L'e-commerçant valide la transaction.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order #%s - Unable to cancel the transaction.","Commande n°%s - Impossible d'annuler la transaction.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order #%s - Unable to partially validate the transaction.","Commande n°%s - Impossible de valider partiellement la transaction.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order #%s - Unable to validate the transaction.","Commande n°%s - Impossible de valider la transaction.",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order ID is empty","Le n° de commande est vide",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Order not found","La commande n'a pas été trouvée",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Transaction Control","Contrôle des transactions",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+"Transaction not found","La transaction n'a pas été trouvée",app/code/community/Fianet/Payment3xcb/controllers/Adminhtml/Transaction/ControlController.php
+
+"3xCB error","Erreur 3xCB",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"An error occurred during payment redirection: %s","Une erreur est survenue pendant la redirection vers la plateforme de paiement : %s",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Automatic Update","Mise à jour automatique",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Back From 3xCB Platform","Retour depuis la plateforme 3xCB",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Checksum error","Erreur de somme de contrôle",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Order #%s","Commande n°%s",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Payment aborted","Paiement abandonné",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Payment aborted, you can try to place your order again","Paiement abandonné, vous pouvez réessayer de passer votre commande",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Redirect To 3xCB Platform","Redirection vers la plateforme 3xCB",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+"Unknown Error","Erreur inconnue",app/code/community/Fianet/Payment3xcb/controllers/PaymentController.php
+
+"3xCB Transactions Control","Contrôle des transactions 3xCB",app/code/community/Fianet/Payment3xcb/etc/adminhtml.xml
+"FIA-NET 3xCB","FIA-NET 3xCB",app/code/community/Fianet/Payment3xcb/etc/adminhtml.xml
+Logs,Journal,app/code/community/Fianet/Payment3xcb/etc/adminhtml.xml
+
+"Pending 3xCB","En attente de 3xCB",app/code/community/Fianet/Payment3xcb/etc/config.xml
+
+"Available For","Disponible pour",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Available For Customer Groups","Disponible pour les groupes clients",app/code/community/Fianet/Payment3xcb/etc/system.xml
+Debug,Debug,app/code/community/Fianet/Payment3xcb/etc/system.xml
+Enabled,Activé,app/code/community/Fianet/Payment3xcb/etc/system.xml
+"FIA-NET 3xCB - Payment in 2, 3 or 4 times by credit card","FIA-NET 3xCB - Paiement en 2, 3 ou 4 fois par carte bancaire",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Maximum Order Total","Montant maximum de commande",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Merchant Reference","Référence e-commerçant",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Minimum Order Total","Montant minimum de commande",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"New Order Status","Statut d'une nouvelle commande",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Payment from Applicable Countries","Mode de paiement autorisé pour",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Payment from Specific Countries","Mode de paiement autorisé pour les pays spécifiques",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Secret Key","Clé secrète",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Sort Order","Ordre de tri",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"Test Mode","Mode test",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"The merchant reference is provided in your 3xCB account","La référence e-commerçant est fournie dans votre compte 3xCB",app/code/community/Fianet/Payment3xcb/etc/system.xml
+"The secret key is provided in your 3xCB account","La clé secrète est fournie dans votre compte 3xCB",app/code/community/Fianet/Payment3xcb/etc/system.xml
+Title,Libellé,app/code/community/Fianet/Payment3xcb/etc/system.xml
+"You can enable the payment method only for some customer groups (for example for testing the payment method)","Vous pouvez activer la méthode de paiement seulement pour certains groupes clients (par exemple pour tester le mode de paiement)",app/code/community/Fianet/Payment3xcb/etc/system.xml
+
+"3xCB Transaction","Transaction 3xCB",app/design/adminhtml/default/default/layout/fianetpayment3xcb.xml
+
+"Are you sure you want to delete this category?","Êtes-vous sûr(e) de vouloir supprimer cette catégorie ?",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/catalog/category/tree.phtml
+Categories,Catégories,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/catalog/category/tree.phtml
+"Collapse All","Tout réduire",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/catalog/category/tree.phtml
+"Expand All","Tout développer",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/catalog/category/tree.phtml
+
+Address,Adresse,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+Carrier,Transporteur,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+City,Ville,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+Country,Pays,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"FIA-NET Shipping Name","Nom de livraison FIA-NET",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"FIA-NET Shipping Speed","Rapidité de livraison FIA-NET",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"FIA-NET Shipping Type","Type de livraison FIA-NET",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+Method,Méthode,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"Postal Code","Code Postal",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+Save,Enregistrer,app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"Shipping Configuration","Configuration de la livraison",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"Shipping Method to FIA-NET Shipping Type Mapping","Association des méthodes de livraison avec les types de livraison FIA-NET",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"Store Location","Localisation de la boutique",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+"To define","A definir",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/shipping/method/edit.phtml
+
+"3xCB Transaction State","État de transaction 3xCB",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/transaction/state/edit.phtml
+"FIA-NET Transaction State to Order Status Mapping","Association des état de transaction FIA-NET avec les statuts de commande",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/transaction/state/edit.phtml
+"Notify Customer","Notifier le client",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/transaction/state/edit.phtml
+"Order Status","Statut de commande",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/transaction/state/edit.phtml
+"State Description","Description de l'état",app/design/adminhtml/default/default/template/fianetpayment3xcb/mapping/transaction/state/edit.phtml
+
+"Order under control","Order under control",app/design/adminhtml/default/default/template/fianetpayment3xcb/payment/info.phtml
+Processing,Processing,app/design/adminhtml/default/default/template/fianetpayment3xcb/payment/info.phtml
+Status,Status,app/design/adminhtml/default/default/template/fianetpayment3xcb/payment/info.phtml
+
+"FIA-NET 3xCB - Payment in 2, 3 or 4 times by credit card","FIA-NET 3xCB - Paiement en 2, 3 ou 4 fois par carte bancaire",app/design/frontend/base/default/template/fianetpayment3xcb/payment/form.phtml
+"This payment method is currently in test phase, no payment possible.","Cette méthode de paiement est actuellement en phase de test, aucun paiement n'est possible.",app/design/frontend/base/default/template/fianetpayment3xcb/payment/form.phtml
+
+Back,Retour,app/design/frontend/base/default/template/fianetpayment3xcb/payment/redirect.phtml
+"Go to online payment platform","Aller sur la plateforme de paiement en ligne",app/design/frontend/base/default/template/fianetpayment3xcb/payment/redirect.phtml
+"There has been an error processing your payment. Please try later or contact us for help.","Une erreur est survenue lors du traitement de votre paiement. Veuillez réessayer plus tard ou nous contacter pour obtenir de l'aide.",app/design/frontend/base/default/template/fianetpayment3xcb/payment/redirect.phtml
+"You will be redirected to 3xCB in a few seconds...","Vous allez être redirigé vers 3xCB dans quelques secondes...",app/design/frontend/base/default/template/fianetpayment3xcb/payment/redirect.phtml

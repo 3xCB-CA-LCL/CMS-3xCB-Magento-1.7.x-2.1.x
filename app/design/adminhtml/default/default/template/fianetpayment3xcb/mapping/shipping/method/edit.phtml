@@ -1,0 +1,120 @@
+<?php
+
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please contact us
+ * via http://www.fia-net-group.com/formulaire.php so we can send you a copy immediately.
+ *
+ * @author     FIA-NET <support-boutique@fia-net.com>
+ * @copyright  Copyright (c) 2017 FIA-NET
+ * @version    Release: $Revision: 0.1.0 $
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+?>
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?php echo $this->__('Shipping Configuration'); ?></h3></td>
+            <td class="a-right">
+                <button id="1021" type="button" class="scalable save" onclick="editForm.submit();" style=""><span><?php echo $this->__('Save'); ?></span></button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+    <form id="edit_form" name="edit_form" method="post" action="<?php echo $this->getUrl('*/*/post'); ?>">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->escapeHtml($this->__('Store Location')); ?></h4>
+        <fieldset>
+            <label for="store_address_input"><?php echo $this->escapeHtml($this->__('Address')); ?></label>
+            <input id="store_address_input" type="text" name="store_location[store_address]" value="<?php echo Mage::getModel('fianetpayment3xcb/store_information')->load("store_address")->getData('value') ?>">
+            &nbsp;
+            <label for="store_postal_code_input"><?php echo $this->escapeHtml($this->__('Postal Code')); ?></label>
+            <input id="store_postal_code_input" type="text" name="store_location[store_postal_code]" value="<?php echo Mage::getModel('fianetpayment3xcb/store_information')->load("store_postal_code")->getData('value') ?>">
+            &nbsp; 
+            <label for="store_city_input"><?php echo $this->escapeHtml($this->__('City')); ?></label>
+            <input id="store_city_input" type="text" name="store_location[store_city]" value="<?php echo Mage::getModel('fianetpayment3xcb/store_information')->load("store_city")->getData('value') ?>">
+            &nbsp; 
+            <label for="store_country_input"><?php echo $this->escapeHtml($this->__('Country')); ?></label>
+            <input id="store_country_input" type="text" name="store_location[store_country]" value="<?php echo Mage::getModel('fianetpayment3xcb/store_information')->load("store_country")->getData('value') ?>">
+        </fieldset>
+
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->escapeHtml($this->__('Shipping Method to FIA-NET Shipping Type Mapping')); ?></h4>
+        <input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+        <div class="grid">
+            <table cellspacing="0" class="data">
+                <thead>
+                    <tr class="headings">
+                        <th><?php echo $this->__('Carrier'); ?></th>
+                        <th><?php echo $this->__('Method'); ?></th>
+                        <th><?php echo $this->__('FIA-NET Shipping Type'); ?></th>
+                        <th><?php echo $this->__('FIA-NET Shipping Speed'); ?></th>
+                        <th><?php echo $this->__('FIA-NET Shipping Name'); ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $fianetShippingTypeOptions = $this->getShippingTypeOptionArray();
+                    $fianetShippingSpeedOptions = $this->getShippingSpeedOptionArray();
+                    ?>
+                    <?php $i = 0; ?>
+                    <?php foreach ($this->getAllShippingMethods() as $carrier): ?>
+                        <?php foreach ($carrier->methods as $method): ?>
+                            <?php
+                            /** @var Fianet_Payment3xcb_Model_Mapping_Shipping_Method $mapping */
+                            $mapping = $this->getShippingMethodMapping($method);
+                            ?>
+                            <tr class="<?php echo $i % 2 == 0 ? 'even' : ''; ?>">
+                                <td class="label"><?php echo $this->escapeHtml($carrier->title); ?></td>
+                                <td class="label"><?php echo $this->escapeHtml($method->label); ?></td>
+                                <td class="input-ele">
+                                    <select name="<?php echo $this->escapeHtml("mapping[{$carrier->code}][{$method->code}][fianet_shipping_type_id]"); ?>"
+                                        title="<?php echo $this->escapeHtml($this->__('FIA-NET Shipping Type')); ?>"
+                                        <?php if ($method->disabled): ?> disabled=disabled<?php endif; ?>>
+                                        <?php foreach ($fianetShippingTypeOptions as $option): ?>
+                                            <option value="<?php echo $this->escapeHtml($option['value']); ?>"
+                                                <?php if (!$mapping->getId() && $option['value'] == '4'
+                                                    || $mapping->getId() && $mapping->getFianetShippingTypeId() == $option['value']
+                                                ): ?> selected=selected<?php endif; ?>
+                                                ><?php echo $this->escapeHtml($option['label']); ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                                <td class="input-ele">
+                                    <select name="<?php echo $this->escapeHtml("mapping[{$carrier->code}][{$method->code}][fianet_shipping_speed_id]"); ?>"
+                                        title="<?php echo $this->escapeHtml($this->__('FIA-NET Shipping Speed')); ?>"
+                                        <?php if ($method->disabled): ?> disabled=disabled<?php endif; ?>>
+                                        <?php foreach ($fianetShippingSpeedOptions as $option): ?>
+                                            <option value="<?php echo $this->escapeHtml($option['value']); ?>"
+                                                <?php if (!$mapping->getId() && $option['value'] == '2'
+                                                    || $mapping->getId() && $mapping->getFianetShippingSpeedId() == $option['value']
+                                                ): ?> selected=selected<?php endif; ?>
+                                                ><?php echo $this->escapeHtml($option['label']); ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                                <td class="input-ele">
+                                    <input type="text" name="<?php echo $this->escapeHtml("mapping[{$carrier->code}][{$method->code}][fianet_shipping_name]"); ?>"
+                                        placeholder="<?php echo $this->escapeHtml($this->__('To define')); ?>"
+                                        value="<?php echo $this->escapeHtml($mapping->getId() ? $mapping->getFianetShippingName() : ''); ?>"
+                                        <?php if ($method->disabled): ?> disabled=disabled<?php endif; ?>>
+                                </td>
+                            </tr>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    var editForm = new varienForm('edit_form', '');
+</script>

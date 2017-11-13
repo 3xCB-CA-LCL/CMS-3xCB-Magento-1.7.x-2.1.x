@@ -1,0 +1,83 @@
+<?php
+
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please contact us
+ * via http://www.fia-net-group.com/formulaire.php so we can send you a copy immediately.
+ *
+ * @author     FIA-NET <support-boutique@fia-net.com>
+ * @copyright  Copyright (c) 2017 FIA-NET
+ * @version    Release: $Revision: 0.1.0 $
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+class Fianet_Payment3xcb_Helper_Shipping_Envoimoinscher extends Fianet_Payment3xcb_Helper_Shipping_Abstract
+{
+    /**
+     * @module_name      Boxtale_Envoimoinscher
+     * @module_author    -
+     * @module_version   -
+     * @carrier_code     -
+     * https://www.magentocommerce.com/magento-connect/envoimoinscher-leader-de-la-livraison-sur-internet.html
+     *
+     * Populate data from external module
+     *
+     * @param Fianet_Payment3xcb_Api_ShippingInterface $shipping
+     * @param Mage_Sales_Model_Order $order
+     * @return bool
+     */
+    public function populate(Fianet_Payment3xcb_Api_ShippingInterface $shipping, Mage_Sales_Model_Order $order)
+    {
+        // TODO: Not compatible with Magento >= 1.6 (1.4, 1.4.1.1, 1.4.2, 1.5)
+
+        $parcelPoint = Mage::getSingleton('core/session')->getParcelPoint();
+        if (!empty($parcelPoint)) {
+            $point = $this->getDropOffPoint($order);
+
+            $shipping->setType(Fianet_Payment3xcb_Api_ShippingInterface::TYPE_PICKUP_NETWORK);
+            $shipping->addPickupPoint()
+                ->setId($point['code'])
+                ->setName($point['name'])
+                ->getAddress()
+                    ->setStreet($point['address'])
+                    ->setPostcode($point['zipcode'])
+                    ->setCity($point['city'])
+                    ->setCountry($point['country']);
+        } else {
+            $shipping->setType(Fianet_Payment3xcb_Api_ShippingInterface::TYPE_CARRIER);
+        }
+
+        return true;
+    }
+
+    /**
+     * @param Mage_Sales_Model_Order $order
+     * @return array
+     */
+    protected function getDropOffPoint(Mage_Sales_Model_Order $order)
+    {
+        $config = Mage::getStoreConfig('carriers/envoimoinscher');
+        $parcelPoint = new Env_ParcelPoint(
+            array(
+                'user' => $config['user'],
+                'pass' => $config['mdp'],
+                'key' => $config['cle'],
+            )
+        );
+        $parcelPoint->server = Mage::getModel('envoimoinscher/emc_environment')
+            ->getHost($config['environment']);
+        $parcelPoint->getParcelPoint(
+            'dropoff_point',
+            $parcelPoint,
+            $order->getShippingAddress()->getCountry()
+        ); 
+        return $parcelPoint->points['dropoff_point'];
+    }
+}

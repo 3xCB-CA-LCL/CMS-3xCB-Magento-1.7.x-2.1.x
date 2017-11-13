@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please contact us
+ * via http://www.fia-net-group.com/formulaire.php so we can send you a copy immediately.
+ *
+ * @author     FIA-NET <support-boutique@fia-net.com>
+ * @copyright  Copyright (c) 2017 FIA-NET
+ * @version    Release: $Revision: 0.1.0 $
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addCss">
+                <name>fianetpayment3xcb.css</name>
+            </action>
+        </reference>
+    </default>
+
+    <add_order_grid_column_handle>
+        <reference name="sales_order.grid">
+            <action method="addColumnAfter" translate="arguments.header" module="fianetpayment3xcb">
+                <columnId>fianet3xcb_state</columnId>
+                <arguments>
+                    <header>3xCB Transaction</header>
+                    <index>fianet3xcb_state</index>
+                    <type>options</type>
+                    <filter>Fianet_Payment3xcb_Block_Adminhtml_Widget_Grid_Column_Filter_TransactionState</filter>
+                    <renderer>Fianet_Payment3xcb_Block_Adminhtml_Widget_Grid_Column_Renderer_TransactionState</renderer>
+                    <width>200</width>
+                </arguments>
+                <after>status</after>
+            </action>
+        </reference>
+    </add_order_grid_column_handle>
+
+    <adminhtml_sales_order_grid>
+        <update handle="add_order_grid_column_handle"/>
+    </adminhtml_sales_order_grid>
+
+    <adminhtml_sales_order_index>
+        <update handle="add_order_grid_column_handle"/>
+    </adminhtml_sales_order_index>
+
+    <fianetpayment3xcb_adminhtml_mapping_catalog_category_index>
+        <reference name="left">
+            <block type="fianetpayment3xcb/adminhtml_mapping_catalog_category_tree" name="mapping_catalog_category_tree"/>
+        </reference>
+        <reference name="content">
+            <block type="fianetpayment3xcb/adminhtml_mapping_catalog_category_edit" name="mapping_catalog_category_edit" template="fianetpayment3xcb/mapping/catalog/category/edit.phtml"/>
+        </reference>
+    </fianetpayment3xcb_adminhtml_mapping_catalog_category_index>
+
+    <fianetpayment3xcb_adminhtml_mapping_shipping_method_index>
+        <reference name="content">
+            <block type="fianetpayment3xcb/adminhtml_mapping_shipping_method_edit" name="mapping_shipping_method_edit" template="fianetpayment3xcb/mapping/shipping/method/edit.phtml"/>
+        </reference>
+    </fianetpayment3xcb_adminhtml_mapping_shipping_method_index>
+
+    <fianetpayment3xcb_adminhtml_mapping_transaction_state_index>
+        <reference name="content">
+            <block type="fianetpayment3xcb/adminhtml_mapping_transaction_state_edit" name="mapping_transaction_state_edit" template="fianetpayment3xcb/mapping/transaction/state/edit.phtml">
+                <block type="core/template" name="formkey" as="formkey" template="formkey.phtml"/>
+            </block>
+        </reference>
+    </fianetpayment3xcb_adminhtml_mapping_transaction_state_index>
+
+    <fianetpayment3xcb_adminhtml_log_index>
+        <reference name="content">
+            <block type="fianetpayment3xcb/adminhtml_log_grid" name="log" />
+        </reference>
+    </fianetpayment3xcb_adminhtml_log_index>
+
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_tabs">
+            <action method="addTab">
+                <name>fianetpayment3xcb_adminhtml_sales_order_view_tab_transaction_history</name>
+                <block>fianetpayment3xcb/adminhtml_sales_order_view_tab_transactionHistory</block>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+
+    <fianetpayment3xcb_adminhtml_transaction_control_index>
+        <reference name="content">
+            <block type="fianetpayment3xcb/adminhtml_transaction_control_grid" name="fianetpayment3xcb_transaction_control_grid" />
+        </reference>
+        <!--<reference name="left">
+            <block type="fianetpayment3xcb/adminhtml_store_switcher" name="store_switcher" before="-" />
+        </reference>-->
+    </fianetpayment3xcb_adminhtml_transaction_control_index>
+</layout>
